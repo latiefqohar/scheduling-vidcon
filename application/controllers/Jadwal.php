@@ -55,6 +55,8 @@ class Jadwal extends CI_Controller
     function edit($JadwalId)
     {
         $data['jadwal'] = $this->jadwal_model->getById($JadwalId);
+        $data['account'] = $this->db->get('account')->result();
+        // var_dump($data['account']);die();
         $this->load->view('template/header');
         $this->load->view('jadwal/edit', $data);
         $this->load->view('template/footer');

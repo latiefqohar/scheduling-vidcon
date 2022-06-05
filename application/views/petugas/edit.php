@@ -19,11 +19,11 @@
                     <form method="post" class="forms-sample" action="<?php echo base_url(); ?>index.php/petugas/update">
                         <div class=" form-group">
                             <label for="PetugasId">ID Petugas</label>
-                            <input type="text" class="form-control" id="PetugasId" placeholder="ID" name="PetugasId" readonly>
+                            <input type="text" class="form-control" id="PetugasId" placeholder="ID" name="PetugasId" value="<?= $petugas->PetugasId; ?>" readonly>
                         </div>
                         <div class="form-group">
                             <label for="PetugasNama">Nama Petugas</label>
-                            <input type="text" class="form-control" id="PetugasNama" placeholder="Nama" name="PetugasNama">
+                            <input type="text" class="form-control" id="PetugasNama" placeholder="Nama" name="PetugasNama" value="<?= $petugas->PetugasNama; ?>">
                         </div>
                         <div class="form-group">
                             <label>File upload</label>

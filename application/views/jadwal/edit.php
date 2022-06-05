@@ -19,23 +19,29 @@
                     <form method="post" class="forms-sample " action="<?php echo base_url(); ?>index.php/jadwal/update">
                         <div class="form-group">
                             <label for="JadwalId">ID Jadwal</label>
-                            <input type="text" class="form-control" id="JadwalId" placeholder="ID Jadwal" name="JadwalId">
+                            <input type="text" class="form-control" id="JadwalId" placeholder="ID Jadwal" name="JadwalId" value="<?= $jadwal->JadwalId; ?>" readonly>
                         </div>
                         <div class="form-group">
                             <label for="JadwalTanggalMulai">Tanggal Mulai</label>
-                            <input type="datetime-local" class="form-control" id="JadwalTanggalMulai" placeholder="Tanggal Mulai" name="JadwalTanggalMulai">
+                            <input type="datetime-local" class="form-control" id="JadwalTanggalMulai" placeholder="Tanggal Mulai"  value="<?= date('Y-m-d\TH:i', strtotime($jadwal->JadwalTanggalMulai)); ?>" name="JadwalTanggalMulai">
                         </div>
                         <div class="form-group">
                             <label for="JadwalTanggalSelesai">Tanggal Selesai</label>
-                            <input type="datetime-local" class="form-control" id="JadwalTanggalSelesai" placeholder="TanggalSelesai" name="JadwalTanggalSelesai">
+                            <input type="datetime-local" class="form-control" id="JadwalTanggalSelesai" placeholder="TanggalSelesai"  value="<?= date('Y-m-d\TH:i', strtotime($jadwal->JadwalTanggalSelesai)); ?>" name="JadwalTanggalSelesai">
                         </div>
                         <div class="form-group">
                             <label for="JadwalTempat">Tempat</label>
-                            <input type="text" class="form-control" id="JadwalTempat" placeholder="Tempat" name="JadwalTempat">
+                            <input type="text" class="form-control" id="JadwalTempat"  value="<?= $jadwal->JadwalTempat; ?>" placeholder="Tempat" name="JadwalTempat">
                         </div>
                         <div class="form-group">
                             <label for="JadwalAccountId">ID Account</label>
-                            <input type="text" class="form-control" id="JadwalAccountId" placeholder="ID Account" name="JadwalAccountId">
+                            <select name="JadwalAccountId" class="form-control" required>
+                                <option value="">Silahkkan pilih account meeting</option>
+                                <?php foreach($account as $row){ ?>
+                                    <option <?php if($row->AccountId == $jadwal->JadwalAccountId){echo "selected";} ?> value="<?= $row->AccountId; ?>"><?= $row->AccountNama; ?></option>
+                                    
+                                <?php } ?>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-success mr-2">Submit</button>
                         <button class="btn btn-light">Cancel</button>

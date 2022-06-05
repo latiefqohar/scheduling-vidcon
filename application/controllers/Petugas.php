@@ -48,7 +48,7 @@ class Petugas extends CI_Controller
 
     function edit($PetugasId)
     {
-        $data['petugas'] = $this->petugas_model->getById($PetugasId);
+        $data['petugas'] = $this->db->get_where('petugas',['PetugasId'=>$PetugasId])->row();
         $this->load->view('template/header');
         $this->load->view('petugas/edit', $data);
         $this->load->view('template/footer');

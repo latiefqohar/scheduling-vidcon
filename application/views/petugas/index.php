@@ -11,7 +11,7 @@
                         <table class="table table-bordered" id="order-listing">
                             <thead>
                             <tr>
-                                <th width="5%">ID</th>
+                                <th width="5%">NO</th>
                                 <th>Nama</th>
                                 <th>Action</th>
                             </tr>
@@ -22,7 +22,7 @@
                             foreach ($petugas as $row) {
                             ?>
                                 <tr>
-                                    <td widtd="5%"><?php echo $row->PetugasId++; ?></td>
+                                    <td widtd="5%"><?php echo $PetugasId++; ?></td>
                                     <td><?php echo $row->PetugasNama; ?></td>
                                     <td>
                                         <a href="<?php echo base_url(); ?>index.php/petugas/edit/<?php echo $row->PetugasId; ?>" class="btn btn-warning">Edit</a>

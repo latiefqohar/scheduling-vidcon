@@ -16,7 +16,8 @@ class Jadwalpetugas extends CI_Controller
 
     public function index()
     {
-        $data['jadwalpetugas'] = $this->db->query("SELECT jp.*, jdw.JadwalTanggalMulai, jdw.JadwalTanggalSelesai, jdw.Jadwaltempat, ptgs.PetugasNama from jadwal_petugas jp join jadwal jdw on jp.JadwalPetugasJadwalId = jdw.JadwalId join petugas ptgs on jp.JadwalPetugasPetugasId = ptgs.PetugasId")->result();
+        $data['jadwalpetugas'] = $this->db->query("SELECT jp.*,ac.AccountNama,ac.AccountDetail, jdw.JadwalTanggalMulai, jdw.JadwalTanggalSelesai, jdw.Jadwaltempat, ptgs.PetugasNama from jadwal_petugas jp join jadwal jdw on jp.JadwalPetugasJadwalId = jdw.JadwalId join petugas ptgs on jp.JadwalPetugasPetugasId = ptgs.PetugasId join account ac on jdw.JadwalAccountId=ac.AccountId")->result();
+
         $this->load->view('template/header');
         $this->load->view('jadwalpetugas/index', $data);
         $this->load->view('template/footer');

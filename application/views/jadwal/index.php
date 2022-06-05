@@ -11,7 +11,7 @@
                         <table class="table table-bordered" id="order-listing">
                             <thead>
                             <tr>
-                                <th width="5%">ID</th>
+                                <th width="5%">No</th>
                                 <th>Tanggal Mulai</th>
                                 <th>Tanggal Selesai</th>
                                 <th>Tempat</th>
@@ -26,7 +26,7 @@
                             foreach ($jadwal as $row) {
                             ?>
                                 <tr>
-                                    <td widtd="5%"><?php echo  $row->JadwalId++; ?></td>
+                                    <td widtd="5%"><?php echo  $JadwalId++; ?></td>
                                     <td><?php echo $row->JadwalTanggalMulai; ?></td>
                                     <td><?php echo $row->JadwalTanggalSelesai; ?></td>
                                     <td><?php echo $row->JadwalTempat; ?></td>

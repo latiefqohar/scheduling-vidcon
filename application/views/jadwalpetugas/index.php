@@ -12,12 +12,12 @@
                             <thead>
                                 <tr>
                                     <th width="5%">No</th>
-                                    <th>ID Petugas</th>
                                     <th>Nama Petugas</th>
                                     <th>Jadwal Mulai</th>
                                     <th>Jadwal Selesai</th>
                                     <th>Tempat</th>
                                     <th>Detail</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -27,11 +27,11 @@
                                 ?>
                                     <tr>
                                         <td  widtd="5%"><?php echo $JadwalPetugasId++; ?></td>
-                                        <td><?php echo $row->JadwalPetugasPetugasId; ?></td>
                                         <td><?php echo $row->PetugasNama; ?></td>
                                         <td><?php echo $row->JadwalTanggalMulai; ?></td>
                                         <td><?php echo $row->JadwalTanggalSelesai; ?></td>
                                         <td><?php echo $row->Jadwaltempat; ?></td>
+                                        <td><?php echo $row->AccountDetail; ?></td>
                                         <td>
                                             <a href="<?php echo base_url(); ?>jadwalpetugas/edit/<?php echo $row->JadwalPetugasId; ?>" class="btn btn-warning">Edit</a>
                                             <a href="<?php echo base_url(); ?>jadwalpetugas/delete/<?php echo $row->JadwalPetugasId; ?>" class="btn btn-danger">Hapus jadwal</a>
